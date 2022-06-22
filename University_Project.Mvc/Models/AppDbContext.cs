@@ -6,6 +6,7 @@ namespace University_Project.Mvc.Models
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
-        DbSet<Car> Cars { get; set; }
+
+        public DbSet<Product> Products { get; set; }
     }
 }

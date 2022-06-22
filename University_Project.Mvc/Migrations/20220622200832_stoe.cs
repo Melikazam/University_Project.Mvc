@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace University_Project.Mvc.Migrations
 {
-    public partial class DataMigration : Migration
+    public partial class stoe : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
