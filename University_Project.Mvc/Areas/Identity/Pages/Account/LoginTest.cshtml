@@ -1,0 +1,27 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+
+<form id="account" method="post" class="login-form">
+    <h3>login now</h3>
+    <input type="email" placeholder="your email" asp-for="Input.Email" class="box" />
+    <span asp-validation-for="Input.Email" class="text-danger"></span>
+    <input type="password" placeholder="your password" asp-for="Input.Password" class="box" />
+    <span asp-validation-for="Input.Password" class="text-danger"></span>
+    <div class="checkbox">
+        <label asp-for="Input.RememberMe">
+            <input asp-for="Input.RememberMe" />
+            @Html.DisplayNameFor(m => m.Input.RememberMe)
+        </label>
+    </div>
+    <input type="submit" value="login now" class="btn">
+    <p> forget your password
+        <a id="forgot-password" asp-page="./ForgotPassword">click here</a>
+    </p>
+    <p> don't have an account
+        <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">click here</a>
+    </p>
+</form>
