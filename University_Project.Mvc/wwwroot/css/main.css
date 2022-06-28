@@ -939,4 +939,5 @@ select.decorated option:hover {
                 padding-top: 15px;
                 font-size: 20px;
                 padding-left: 10px;
+                position: static;
             }
