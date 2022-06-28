@@ -6,14 +6,24 @@
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
 {
-    <li class="nav-item">
+    <div class="login-form" style="list-style:none">
         <a id="manage" class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @UserManager.GetUserName(User)!</a>
-    </li>
-    <li class="nav-item">
+        <h1 class="top-space" style="height: 10px"></h1>
         <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button id="logout" type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+            <button id="logout" type="submit" class="btn">Logout</button>
         </form>
-    </li>
+        <h1 class="top-space" style="height: 10px"></h1>
+    </div>
 }
+else
+{
 
+    <div class="login-form" style="list-style:none">
+        <a class="btn" id="login" asp-area="Identity" asp-page="/Account/Login">login</a>
+        <h1 class="top-space" style="height: 10px"></h1>
+        <p>or</p>
+        <a class="btn" id="register" asp-area="Identity" asp-page="/Account/Register">register</a>
+        <h1 class="top-space" style="height: 10px"></h1>
+    </div>
+}
 </ul>

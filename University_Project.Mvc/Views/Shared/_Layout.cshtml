@@ -1,18 +1,13 @@
-﻿@*@model University_Project.Mvc.Areas.Identity.Pages.Account.LoginModel*@
-
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Responsive Grocery Website Design Tutorial</title>
 
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
-    <title>@ViewData["Title"] - University_Project.Mvc</title>
-    <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!-- custom css file link  -->
 
     <link rel="stylesheet" href="@Url.Content("~/css/main.css")">
     @RenderSection("Styles", false)
@@ -24,15 +19,14 @@
 
 <header class="header">
     
-    <a class="logo" asp-area="" asp-controller="Home" asp-action="Index"> Skates duudeeess </a>
+    <a href="#" class="logo"> Skates duudeeess </a>
 
     
     <nav class="navbar">
-        <a href="#home">Home</a>
+        <a asp-area="" asp-controller="Home" asp-action="Index">Home</a>
         <a asp-area="" asp-controller="Home" asp-action="Catalog">Catalog</a>
         <a href="#">Contact Us</a>
         <a href="#">About Us    </a>
-        <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
     </nav>
 
 
@@ -42,6 +36,7 @@
         <div class="fas fa-shopping-cart" id="cart-btn"></div>
         <div class="fas fa-user" id="login-btn"></div>
     </div>
+
     <form action="" class="search-form">
         <input type="search" id="search-box" placeholder="search here...">
         <label for="search-box" class="fas fa-search"></label>
@@ -54,7 +49,7 @@
             <div class="content">
                 <h3>watermelon</h3>
                 <span class="price">$4.99/-</span>
-                <span class="quantity">qty : 1</span>
+                <span class="quantity">qty: 1</span>
             </div>
         </div>
         <div class="box">
@@ -63,7 +58,7 @@
             <div class="content">
                 <h3>onion</h3>
                 <span class="price">$4.99/-</span>
-                <span class="quantity">qty : 1</span>
+                <span class="quantity">qty: 1</span>
             </div>
         </div>
         <div class="box">
@@ -72,23 +67,18 @@
             <div class="content">
                 <h3>chicken</h3>
                 <span class="price">$4.99/-</span>
-                <span class="quantity">qty : 1</span>
+                <span class="quantity">qty: 1</span>
             </div>
         </div>
         <div class="total"> total : $19.69/- </div>
         <a href="#" class="btn">checkout</a>
-    </div>
+    </div class="login-form">
     
-    <h1> hahaaaaaaaaaaa</h1>
-    <a class="nav-link text-dark" id="login" asp-area="Identity" asp-page="/Account/Login">Login</a>
-
-
+    <partial name="_LoginPartial" />
 
 </header>
 
-
-    @RenderBody()
-
+@RenderBody()
 
 
 <section class="footer">

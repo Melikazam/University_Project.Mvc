@@ -4,7 +4,7 @@ using University_Project.Mvc.Models;
 
 namespace University_Project.Mvc.Repository
 {
-    public class ProductRepository
+    public class ProductRepository : IProductRepository
     {
         private readonly AppDbContext _context;
 

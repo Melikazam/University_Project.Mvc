@@ -1,32 +1,42 @@
-﻿@using Microsoft.AspNetCore.Identity
-
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+﻿
+@page
 @model LoginModel
 
+@{
+    ViewData["Title"] = "Login";
+}
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-    <form method="post" id="account" class="login-form">
-        <h1>magaria</h1>
-        <h3>login now</h3>
-        <div asp-validation-summary="All" class="text-danger"></div>
-        <div class="form-group">
-            <label asp-for="Input.Email"></label>
-            <input asp-for="Input.Email" placeholder="your email" class="box">
-            <span asp-validation-for="Input.Email" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Input.Password"></label>
-            <input type="text" asp-for="Input.Password" placeholder="your password" class="box" />
-            <span asp-validation-for="Input.Password" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <input type="submit" class="btn" value="Login now"/>
-        </div>
 
-    </form>
+<main>
+    <div class="login-container">
+        <form id="account" method="post" class="login-form">
+            <h3>@ViewData["Title"]</h3>
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <input placeholder="your email" class="box" asp-for="Input.Email"/>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Input.Password" placeholder="your password" class="box"/>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="checkbox">
+                <label asp-for="Input.RememberMe">
+                    <input asp-for="Input.RememberMe" />
+                    @Html.DisplayNameFor(m => m.Input.RememberMe)
+                </label>
+            </div>
+                <div class="form-group">
+                    <input type="submit" value="login now" class="btn">
+                </div>
+                <div>
+                    <p>forget your password <a id="forgot-password" asp-page="./ForgotPassword">click here</a></p>
+                    <p>don't have an account <a asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">create now</a></p>
+                </div>
+        </form>
+    </div>
+</main>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

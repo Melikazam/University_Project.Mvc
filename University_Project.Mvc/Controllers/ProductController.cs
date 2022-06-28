@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using University_Project.Mvc.Models;
 using University_Project.Mvc.Services;
@@ -10,12 +9,15 @@ namespace University_Project.Mvc.Controllers
     [ApiController]
     public class ProductController : Controller
     {
-        private readonly IMapper _mapper;
-        private readonly ProductServices _productService;
-        public ProductController(ProductServices productService, IMapper mapper)
+        private readonly IProductService _productService;
+        public ProductController(IProductService productService)
         {
-            _mapper = mapper;
             _productService = productService;
+        }
+
+        public ActionResult Index() 
+        {
+            return View();
         }
 
         [HttpGet("Get")]
@@ -33,16 +35,16 @@ namespace University_Project.Mvc.Controllers
         }
 
         [HttpPost("Create")]
-        public ActionResult CreateProduct(string Name, float Price, string Description, string Image, int Rating_ID, string Category)
+        public ActionResult CreateProduct(Product product)
         {
-            _productService.CreateProduct(Name, Price, Description, Image, Rating_ID, Category);
+            _productService.CreateProduct(product);
             return Ok("Product created");
         }
 
         [HttpPut("Update")]
-        public IActionResult UpdateProduct(string Name, float Price, string Description, string Image, int Rating_ID, string Category)
+        public IActionResult UpdateProduct(string name, float price, string description, string image, string category)
         {
-            _productService.UpdateProductById(Name, Price, Description, Image, Rating_ID, Category);
+            _productService.UpdateProductById(name, price, description, image, category);
             return Ok("Prodcut updated");
         }
 
