@@ -23,8 +23,7 @@ namespace University_Project.Mvc.Controllers
         [HttpGet("Get")]
         public ActionResult<List<Product>> GetProducts()
         {
-            if (_productService.GetProducts() == null) return NotFound("Product not found.");
-            else return Ok("Products found");
+            return _productService.GetProducts();
         }
 
         [HttpGet("Get/{id}")]

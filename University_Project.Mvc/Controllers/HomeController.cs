@@ -6,15 +6,18 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using University_Project.Mvc.Models;
+using University_Project.Mvc.Services;
 
 namespace University_Project.Mvc.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IProductService _service;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IProductService service, ILogger<HomeController> logger)
         {
+            _service = service;
             _logger = logger;
         }
 
@@ -45,7 +48,7 @@ namespace University_Project.Mvc.Controllers
 
         public IActionResult ProductsList()
         {
-            return View();
+            return View(_service.GetProducts());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

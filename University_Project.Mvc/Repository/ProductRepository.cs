@@ -32,7 +32,7 @@ namespace University_Project.Mvc.Repository
 
         public List<Product> GetProducts()
         {
-            return _context.Products.Select(u => u).ToList();
+            return _context.Products.ToList();
         }
 
         public void UpdateProduct(Product product)

@@ -1,17 +1,22 @@
-﻿@model IEnumerable<University_Project.Mvc.Models.Product>
+﻿@model List<Product>
 
 @{
     ViewData["Title"] = "Admin Products Page";
 }
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+
+
+<h2 class="top-space" style="65px"></h2>
 <main>
     <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="text-primary">Category List</h2>
+            <h2 class="text-primary">Products List</h2>
         </div>
         <div class="col-6 text-right">
             <a asp-controller="Product" asp-action="Create" class="btn btn-primary">
-                <i class="fas fa-plus"></i> &nbsp; Create New Category
+                <i class="fas fa-plus"></i> &nbsp; Create New Product
             </a>
         </div>
     </div>
@@ -24,7 +29,7 @@
             <thead>
                 <tr>
                     <th>
-                        Category Name
+                        Product Name
                     </th>
                     <th>
                         Display Order
@@ -37,6 +42,7 @@
                 {
                 <tr>
                     <td width="50%">@obj.Name</td>
+                    <td></td>
                     <td class="text-center">
                         <div class="w-75 btn-group" role="group">
                             <a asp-controller="Product" asp-route-Id="@obj.Id" asp-action="Update" class="btn btn-primary mx-2">
@@ -54,7 +60,7 @@
     }
     else
     {
-        <p> No category exists.</p>
+        <p> No Products exists.</p>
     }
 
 </div>
