@@ -24,14 +24,14 @@ namespace University_Project.Mvc.Controllers
         public ActionResult<List<Product>> GetProducts()
         {
             if (_productService.GetProducts() == null) return NotFound("Product not found.");
-            else return Ok("Products found");
+            else return _productService.GetProducts();
         }
 
         [HttpGet("Get/{id}")]
         public ActionResult<Product> GetProduct(int id)
         {
             if (_productService.GetProductById(id) == null) return NotFound("Product not found.");
-            else return Ok("Product found");
+            else return _productService.GetProductById(id);
         }
 
         [HttpPost("Create")]
@@ -41,14 +41,14 @@ namespace University_Project.Mvc.Controllers
             return Ok("Product created");
         }
 
-        [HttpPut("Update")]
-        public IActionResult UpdateProduct(string name, float price, string description, string image, string category)
+        [HttpPatch("Update/{id}")]
+        public IActionResult UpdateProduct(Product product, int id)
         {
-            _productService.UpdateProductById(name, price, description, image, category);
+            _productService.UpdateProductById(product, id);
             return Ok("Prodcut updated");
         }
 
-        [HttpDelete("Delete")]
+        [HttpDelete("Delete/{id}")]
         public IActionResult DeleteProduct(int id)
         {
             _productService.DeleteProductById(id);

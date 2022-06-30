@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
 using University_Project.Mvc.Models;
 
@@ -35,9 +36,16 @@ namespace University_Project.Mvc.Repository
             return _context.Products.Select(u => u).ToList();
         }
 
-        public void UpdateProduct(Product product)
+        public void UpdateProduct(Product product, int id)
         {
-            _context.Products.Update(product);
+            Product temp = _context.Products.FirstOrDefault(u => u.Id == id);
+            if (temp != null) {
+                temp.Name = product.Name;
+                temp.Price = product.Price;
+                temp.Description = product.Description;
+                temp.Image = product.Image;
+                temp.Category = product.Category;
+            }
             _context.SaveChanges();
         }
     }

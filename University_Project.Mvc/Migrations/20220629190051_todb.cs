@@ -2,7 +2,7 @@
 
 namespace University_Project.Mvc.Migrations
 {
-    public partial class DataMigration : Migration
+    public partial class todb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

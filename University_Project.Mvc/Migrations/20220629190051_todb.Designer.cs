@@ -9,8 +9,8 @@ using University_Project.Mvc.Models;
 namespace University_Project.Mvc.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220626023233_DataMigration")]
-    partial class DataMigration
+    [Migration("20220629190051_todb")]
+    partial class todb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

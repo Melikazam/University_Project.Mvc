@@ -29,9 +29,9 @@ namespace University_Project.Mvc.Services
             _productRepository.AddProduct(product);
         }
 
-        public void UpdateProductById(string Name, float Price, string Description, string Image, string Category)
+        public void UpdateProductById(Product product, int Id)
         {
-               
+            _productRepository.UpdateProduct(product, Id);
         }
 
         public void DeleteProductById(int id)
