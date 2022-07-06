@@ -13,6 +13,6 @@ namespace University_Project.Mvc.Repository
 
         List<Product> GetProducts();
 
-        void UpdateProduct(Product product);
+        void UpdateProduct(Product product, int Id);
     }
 }

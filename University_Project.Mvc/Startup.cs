@@ -27,8 +27,15 @@ namespace University_Project.Mvc
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<ICartItemService, CartItemService>();
+            services.AddTransient<ICartItemRepository, CartItemRepository>();
+
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IProductRepository, ProductRepository>();
+
+            services.AddTransient<IContactService, ContactService>();
+            services.AddTransient<IContactRepository, ContactRepository>();
+
             services.AddDbContext<AppDbContext>(options => 
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddControllersWithViews();

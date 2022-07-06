@@ -7,5 +7,7 @@ namespace University_Project.Mvc.Models
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<Contact> Contacts { get; set; }           
+        public DbSet<CartItem> CartItems { get; set; }  
     }
 }

@@ -5,6 +5,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\AppDb\**" />
+    <Content Remove="Migrations\AppDb\**" />
+    <EmbeddedResource Remove="Migrations\AppDb\**" />
+    <None Remove="Migrations\AppDb\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20220630123555_todb.cs" />
+    <Compile Remove="Migrations\20220630123555_todb.Designer.cs" />
+    <Compile Remove="Migrations\20220702213408_dbmg.cs" />
+    <Compile Remove="Migrations\20220702213408_dbmg.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.25" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.25" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.25" />
@@ -13,10 +27,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Migrations\AppDb\" />
   </ItemGroup>
 
 </Project>

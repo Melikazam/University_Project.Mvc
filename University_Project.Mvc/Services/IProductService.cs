@@ -8,7 +8,7 @@ namespace University_Project.Mvc.Services
         List<Product> GetProducts();
         Product GetProductById(int id);
         void CreateProduct(Product product);
-        void UpdateProductById(string name, float price, string description, string image, string category);
         void DeleteProductById(int id);
+        void UpdateProductById(Product product, int Id);
     }
 }
