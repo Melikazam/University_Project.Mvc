@@ -51,6 +51,11 @@ namespace University_Project.Mvc.Controllers
             return View(_service.GetProducts());
         }
 
+        public IActionResult ProductAddPage() 
+        {
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
