@@ -8,6 +8,9 @@ namespace University_Project.Mvc.Models
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Contact> Contacts { get; set; }           
-        public DbSet<CartItem> CartItems { get; set; }  
+        public DbSet<CartItem> CartItems { get; set; }
+        public DbSet<Article> Articles { get; set; }
+        public DbSet<Category>Categories { get; set; }
+
     }
 }

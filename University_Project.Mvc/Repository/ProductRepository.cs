@@ -44,7 +44,7 @@ namespace University_Project.Mvc.Repository
                 temp.Price = product.Price;
                 temp.Description = product.Description;
                 temp.Image = product.Image;
-                temp.Category = product.Category;
+                temp.Category_Id = product.Category_Id;
             }
             _context.SaveChanges();
         }
