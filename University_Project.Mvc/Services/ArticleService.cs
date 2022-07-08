@@ -1,42 +1,43 @@
 ﻿using System.Collections.Generic;
 using University_Project.Mvc.Models;
+using University_Project.Mvc.Repository;
 
 namespace University_Project.Mvc.Services
 {
     public class ArticleService : IArticleService
     {
-        private readonly IArticleService _articleService; 
+        private readonly IArticleRepository _articleRepository;
 
-        ArticleService(IArticleService articleService)
+        public ArticleService(IArticleRepository articleRepository)
         {
-            _articleService = articleService;
+            _articleRepository = articleRepository;
         }
 
         public void CreateArticle(Article article)
         {
-             _articleService.CreateArticle(article);
+            _articleRepository.CreateArticle(article);
         }
 
         public void DeleteArticleById(int id)
         {
-            _articleService.DeleteArticleById(id);
+            _articleRepository.DeleteArticleById(id);
         }
 
         public Article GetArticleById(int id)
         {
-            return _articleService.GetArticleById(id);
+            return _articleRepository.GetArticleById(id);
 
         }
 
         public List<Article> GetArticles()
         {
-            return _articleService.GetArticles();
+            return _articleRepository.GetArticles();
 
         }
 
         public void UpdateArticleById(Article article, int Id)
         {
-            _articleService.UpdateArticleById(article, Id);
+            _articleRepository.UpdateArticleById(article, Id);
         }
     }
 }

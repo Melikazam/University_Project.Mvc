@@ -5,11 +5,11 @@ namespace University_Project.Mvc.Repository
 {
     public interface IArticleRepository
     {
-        void AddArticle(Article article);
-        void DeleteArticle(Article article);
-        Article GetArticle(int id);
+        void CreateArticle(Article article);
+        void DeleteArticleById(int id);
+        Article GetArticleById(int id);
         List<Article>GetArticles();
-        void UpdateArticle();
+        void UpdateArticleById(Article article, int id);
 
     }
 }

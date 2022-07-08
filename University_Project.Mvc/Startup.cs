@@ -27,6 +27,12 @@ namespace University_Project.Mvc
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IArticleService, ArticleService>();
+            services.AddTransient<IArticleRepository, ArticleRepository>();
+
+            services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
+
             services.AddTransient<ICartItemService, CartItemService>();
             services.AddTransient<ICartItemRepository, CartItemRepository>();
 
