@@ -26,7 +26,6 @@ namespace University_Project.Mvc.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ItemId = table.Column<string>(nullable: true),
                     Quantity = table.Column<int>(nullable: false),
                     ProductId = table.Column<int>(nullable: false)
                 },

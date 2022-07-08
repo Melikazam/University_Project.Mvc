@@ -10,7 +10,7 @@ using University_Project.Mvc.Models;
 namespace University_Project.Mvc.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220708220856_todb")]
+    [Migration("20220708223221_todb")]
     partial class todb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,9 +45,6 @@ namespace University_Project.Mvc.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ItemId")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ProductId")
                         .HasColumnType("int");
