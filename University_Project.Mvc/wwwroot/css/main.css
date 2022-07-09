@@ -1047,8 +1047,9 @@ select.decorated option:hover {
 /*About Us*/
 
 .wrapper {
-    background-color: #ffffff;
+    background-color:burlywood;
     max-width: 80%;
+    min-height: 60%;
     width: 100%;
     height: auto;
     position: relative;

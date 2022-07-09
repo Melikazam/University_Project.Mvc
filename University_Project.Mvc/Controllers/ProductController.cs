@@ -74,7 +74,7 @@ namespace University_Project.Mvc.Controllers
         public IActionResult DeleteProduct(int id)
         {
             _productService.DeleteProductById(id);
-            return RedirectToAction("   ", "Home");
+            return RedirectToAction("ProductsList", "Home");
         }
     }
 }
