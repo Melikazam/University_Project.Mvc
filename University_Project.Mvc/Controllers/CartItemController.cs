@@ -9,7 +9,6 @@ namespace University_Project.Mvc.Controllers
     [ApiController]
     public class CartItemController : Controller
     {
-
         private readonly ICartItemService _cartItemService;
         public CartItemController(ICartItemService cartItemService)
         {
@@ -41,5 +40,6 @@ namespace University_Project.Mvc.Controllers
             _cartItemService.DeleteCartItemById(id);
             return Ok("Contact deleted");
         }
+        
     }
 }

@@ -1,0 +1,28 @@
+﻿@model Contact
+
+<h1 class="top-space" style="height: 80px;"></h1>
+
+<main>
+    <form method="post" asp-controller="ContactController" asp-action="CreateContact" class="wrapper">
+        <h2>contact us</h2>
+        <div class="form">
+          <div class="form_container">
+            <div class="form_left">
+            <div class="input_field">
+              <input asp-for="Name" placeholder="Your Name*">
+            </div>
+            <div class="input_field">
+              <input asp-for="Email" placeholder="Your Email*">
+            </div>
+            <div class="input_field">
+              <input asp-for="PhoneN" placeholder="Your Phone*">
+            </div>
+          </div>
+          <div class="form_right">
+            <textarea asp-for="Comment" placeholder="Your Message*"></textarea>
+          </div>
+          </div>
+          <input type="submit" value="Send" class="btn"/>
+        </div>
+      </form>
+</main>

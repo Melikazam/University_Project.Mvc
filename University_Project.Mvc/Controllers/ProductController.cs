@@ -14,10 +14,18 @@ namespace University_Project.Mvc.Controllers
         {
             _productService = productService;
         }
-        public ActionResult Index(Product product) 
+        public ActionResult Index(int id) 
         {
+            var product = _productService.GetProductById(id);
             return View(product);
         }
+
+        [Route("ProductAddPage")]
+        public ActionResult ProductAddPage()
+        {
+            return View();
+        }
+
 
         [HttpGet("Get")]
         public ActionResult<List<Product>> GetProducts()
@@ -47,11 +55,10 @@ namespace University_Project.Mvc.Controllers
             return Ok("Prodcut updated");
         }
 
-        [HttpDelete("Delete/{id}")]
         public IActionResult DeleteProduct(int id)
         {
             _productService.DeleteProductById(id);
-            return Ok("Product deleted");
+            return RedirectToAction("Index", "Index");
         }
     }
 }

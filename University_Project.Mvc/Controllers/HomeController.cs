@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -21,34 +22,40 @@ namespace University_Project.Mvc.Controllers
             _logger = logger;
         }
 
+        [Authorize()]
+        [Authorize(Roles = "Member")]
+        [Route("Index")]
         public IActionResult Index()
         {
             return View();
         }
 
+        //[Authorize(Roles = "Member")]
+        [Route("Catalog")]
         public IActionResult Catalog()
         {
             return View(_service.GetProducts());
         }
 
+        //[Authorize(Roles = "Member")]
+        [Route("ContactUs")]
         public IActionResult ContactUs()
         {
             return View();
         }
 
+        //[Authorize(Roles = "Member")]
+        [Route("AboutUs")]
         public IActionResult AboutUs()
         {
             return View();
         }
 
+        //[Authorize(Roles = "Admin")]
+        [Route("ProductsList")]
         public IActionResult ProductsList()
         {
             return View(_service.GetProducts());
-        }
-
-        public IActionResult ProductAddPage() 
-        {
-            return View();
         }
 
 

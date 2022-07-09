@@ -48,11 +48,11 @@ section {
     padding: 2rem 0;
     padding-bottom: 3rem;
     font-size: 3.5rem;
-    color: var(--black);
+    color: #02002d;
 }
 
     .heading span {
-        background: var(--orange);
+        background: orange;
         color: rgb(255, 255, 255);
         display: inline-block;
         padding: .5rem 3rem;
@@ -78,42 +78,41 @@ section {
 }
 
     .btn:hover {
-        background: var(--orange);
+        background: orange;
         color: #fff;
     }
 
 .header {
+    width: 100%;
     position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
     z-index: 1000;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 2rem 9%;
-    background: #eee;
+    justify-content: space-around;
+    flex-items: margin-left;
+    background: #02002d;
     box-shadow: var(--box-shadow);
 }
 
     .header .logo {
         font-size: 2.5rem;
         font-weight: bolder;
-        color: var(--black);
+        color: whitesmoke   ;
     }
 
         .header .logo i {
-            color: var(--orange);
+            color: #02002d;
         }
 
     .header .navbar a {
         font-size: 1.7rem;
         margin: 0 1rem;
-        color: var(--black);
+        color: whitesmoke;
     }
 
         .header .navbar a:hover {
-            color: var(--orange);
+            color: orange;
         }
 
     .header .icons div {
@@ -130,7 +129,7 @@ section {
     }
 
         .header .icons div:hover {
-            background: var(--orange);
+            background: orange;
             color: #fff;
         }
 
@@ -175,7 +174,7 @@ section {
     }
 
         .header .search-form label:hover {
-            color: var(--orange);
+            color: orange;
         }
 
 .header .shopping-cart {
@@ -217,11 +216,11 @@ section {
         }
 
             .header .shopping-cart .box .fa-trash:hover {
-                color: var(--orange);
+                color: orange;
             }
 
         .header .shopping-cart .box .content h3 {
-            color: var(--black);
+            color: #02002d;
             font-size: 1.7rem;
             padding-bottom: 1rem;
         }
@@ -289,7 +288,7 @@ section {
     }
 
         .header .login-form p a {
-            color: var(--orange);
+            color: #02002d;
             text-decoration: underline;
         }
 
@@ -320,12 +319,12 @@ section {
     }
 
         .home .content h3 {
-            color: var(--black);
+            color: #02002d;
             font-size: 5rem;
         }
 
             .home .content h3 span {
-                color: var(--orange);
+                color: orange;
             }
 
         .home .content p {
@@ -414,7 +413,7 @@ section {
 
         .products .product-slider .box .stars i {
             font-size: 1.7rem;
-            color: var(--orange);
+            color: #02002d;
             padding: .5rem 0;
         }
 
@@ -497,7 +496,7 @@ section {
         }
 
         .review .review-slider .box .stars i {
-            color: var(--orange);
+            color: #02002d;
             font-size: 1.7rem;
         }
 
@@ -541,17 +540,17 @@ section {
                 }
 
                     .catalog .box-container .box .content .icons a:hover {
-                        color: var(--black);
+                        color: orange;
                     }
 
                     .catalog .box-container .box .content .icons a i {
-                        color: var(--orange);
+                        color: #02002d;
                         padding-right: .5rem;
                     }
 
             .catalog .box-container .box .content h3 {
                 line-height: 1.8;
-                color: var(--black);
+                color: #02002d);
                 font-size: 2.2rem;
                 padding: .5rem 0;
             }
@@ -593,7 +592,7 @@ main {
         }
 
             .footer .box-container .box h3 i {
-                color: var(--orange);
+                color: #02002d;
             }
 
         .footer .box-container .box .links {
@@ -604,7 +603,7 @@ main {
         }
 
             .footer .box-container .box .links i {
-                color: var(--orange);
+                color: #02002d;
                 padding-right: .5rem;
             }
 
@@ -633,7 +632,7 @@ main {
         }
 
             .footer .box-container .box .share a:hover {
-                background: var(--orange);
+                background: orange;
                 color: #fff;
             }
 
@@ -665,7 +664,7 @@ main {
     }
 
         .footer .credit span {
-            color: var(--orange);
+            color: #02002d;
         }
 
 
@@ -884,7 +883,7 @@ select.decorated option:hover {
     }
 
         .login-container p a {
-            color: var(--orange);
+            color: #02002d;
             text-decoration: underline;
         }
 
@@ -1044,3 +1043,74 @@ select.decorated option:hover {
         border-radius: 0.9375em;
         border-style: groove;
     }
+
+/*About Us*/
+
+.wrapper {
+    background-color: #ffffff;
+    max-width: 80%;
+    width: 100%;
+    height: auto;
+    position: relative;
+    left: 10%;
+    box-shadow: var(--box-shadow);
+    border-color: black;
+    text-align: center;
+    border-radius: 15px;
+    padding: 3%;
+}
+
+    .wrapper h2 {
+        font-size: 30px;
+        color: rgb(68, 68, 68);
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 0.1875em;
+        padding-bottom: 2%;
+    }
+
+    .wrapper .form .form_container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+        .wrapper .form .form_container .form_left,
+        .wrapper .form .form_container .form_right {
+            width: 48%;
+        }
+
+    .wrapper .form .input_field input[type="text"],
+    .wrapper .form textarea {
+        width: 100%;
+        padding: 14px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        border: 1.5px solid white;
+        border-radius: 15px;
+        background: rgba(191, 182, 182, 0.25);
+    }
+
+    .wrapper .form textarea {
+        height: 90%;
+        resize: none;
+    }
+    .wrapper p {
+        text-indent: 5%;
+        text-align: justify;
+        font-size: 16px;
+    }
+/*        .wrapper p::first-letter {
+            font-size: 300%;
+        }*/
+    .wrapper .form .btn {
+        width: 8em;
+        text-align: center;
+        background-color: darkblue;
+    }
+
+
+        .wrapper .form .btn a {
+            color: #fff;
+        }
