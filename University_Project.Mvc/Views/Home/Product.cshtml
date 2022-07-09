@@ -1,0 +1,72 @@
+﻿@model Product
+
+@{
+    ViewData["Title"] = "product Page";
+}
+
+<main>
+    <div class="product-container">
+        
+        <div class="left-column">
+            <div class="image-container">
+                <img src="~/images/blog-1.jpg" style="width: 25%; margin-left: 35%;">
+            </div>
+            <div class="slider-container">
+                <div class="slider">
+
+                </div>
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="product-header">
+                <header>
+                    <h1>Product</h1> 
+                    <h4>Category</h4>
+                    <h3 class="space" style="height: 45px;"></h3>
+                </header>
+                    <p class="product-description">
+                        Product description looks like this
+                    </p>
+            </div>
+            <div class="product-footer">
+                <footer>
+                    <p>17.99$</p>
+                    <a href="#" class="btn"> Add To Cart</a>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
+    @*<div class="product-container">
+        <div class="left-column">
+            <div class="image-container">
+                <img src="~/images/blog-1.jpg">
+            </div>
+            <div class="slider-container">
+                <div class="slider">
+
+                </div>
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="product-header">
+                <header>
+                    <h1>@Model.Name</h1> 
+                    <h4>@Model.Category_Id</h4>
+                    <h3 class="space" style="height: 45px;"></h3>
+                </header>
+                    <p class="product-description">
+                        @Model.Description
+                    </p>
+            </div>
+            <div class="product-footer">
+                <footer>
+                    <p>@Model.Price</p>
+                    <a asp-area="" asp-controller="Catalog" asp-action="ProductAddPage" class="btn">read more</a>
+                    <a asp-area="" asp-controller="CartItem" asp-action="CreateCartItem" class="btn"> Add To Cart</a>
+                </footer>
+            </div>
+        </div>
+    </div>*@
+</main>

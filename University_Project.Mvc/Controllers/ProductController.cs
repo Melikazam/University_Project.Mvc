@@ -14,7 +14,6 @@ namespace University_Project.Mvc.Controllers
         {
             _productService = productService;
         }
-
         public ActionResult Index() 
         {
             return View();

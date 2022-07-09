@@ -26,14 +26,9 @@ namespace University_Project.Mvc.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         public IActionResult Catalog()
         {
-            return View();
+            return View(_service.GetProducts());
         }
 
         public IActionResult ContactUs()
@@ -55,6 +50,7 @@ namespace University_Project.Mvc.Controllers
         {
             return View();
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
