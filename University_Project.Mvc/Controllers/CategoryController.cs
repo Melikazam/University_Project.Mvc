@@ -28,8 +28,7 @@ namespace University_Project.Mvc.Controllers
         [HttpGet("Get")]
         public ActionResult<List<Category>> GetCategories()
         {
-            if (_categoryService.GetCategories() == null) return NotFound("Article not found.");
-            else return _categoryService.GetCategories();
+            return _categoryService.GetCategories();
         }
 
         [HttpGet("Get/{id}")]

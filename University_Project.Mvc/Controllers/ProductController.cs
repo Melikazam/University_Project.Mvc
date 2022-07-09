@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.IO;
 using University_Project.Mvc.Models;
 using University_Project.Mvc.Services;
 
@@ -14,12 +16,16 @@ namespace University_Project.Mvc.Controllers
         {
             _productService = productService;
         }
+
+        [Authorize(Roles = "Member")]
+        [Route("productPage")]
         public ActionResult Index(int id) 
         {
             var product = _productService.GetProductById(id);
             return View(product);
         }
 
+        [Authorize (Roles = "Admin")]
         [Route("ProductAddPage")]
         public ActionResult ProductAddPage()
         {
@@ -41,11 +47,20 @@ namespace University_Project.Mvc.Controllers
             else return _productService.GetProductById(id);
         }
 
-        [HttpPost("Create")]
-        public ActionResult CreateProduct(Product product)
+        [HttpPost]
+        public IActionResult CreateProduct([FromForm] ProductFormViewModel product)
         {
-            _productService.CreateProduct(product);
-            return Ok("Product created");
+
+            if (ModelState.IsValid)
+            {
+                var ms = new MemoryStream();
+                product.Image.CopyTo(ms);
+                var picture = ms.ToArray();
+                var model = new Product() { Id = 0, Description = product.Description, Image = picture, Name = product.Name, Price = product.price, Category_Id = product.Category_Id };
+                _productService.CreateProduct(model);
+                return RedirectToAction("ProductsList", "Home");
+            }
+            return View(product);
         }
 
         [HttpPatch("Update/{id}")]
@@ -55,10 +70,11 @@ namespace University_Project.Mvc.Controllers
             return Ok("Prodcut updated");
         }
 
+        
         public IActionResult DeleteProduct(int id)
         {
             _productService.DeleteProductById(id);
-            return RedirectToAction("Index", "Index");
+            return RedirectToAction("   ", "Home");
         }
     }
 }

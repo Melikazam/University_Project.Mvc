@@ -9,7 +9,12 @@
         
         <div class="left-column">
             <div class="image-container">
-                <img src="~/images/blog-1.jpg">
+                @{
+                    var base64 = Convert.ToBase64String(Model.Image);
+                    var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                }
+
+                <img src="@imgSrc" />
             </div>
             <div class="slider-container">
                 <div class="slider">
