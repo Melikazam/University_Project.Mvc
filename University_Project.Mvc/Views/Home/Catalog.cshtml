@@ -4,18 +4,48 @@
     ViewData["Title"] = "Catalog Page";
 }
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<style>
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding: 12px 16px;
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .dropdown span{
+        cursor: pointer;
+    }
+</style>
+
 <h1 class="top-space" style="height: 42px;"></h1>
 
 
-
 <main>
-        <div class="fixed-filter">
+    <div class="fixed-filter">
         <h1>Filter</h1>
-        <select id="sort" style="margin: 5%;" class="price_sorting">
-            <option class="type" value="Featured">Featured</option>
-            <option value="Low">Low To High</option>
-            <option value="High">High To Low</option>
-        </select>
+        <div class="dropdown">
+                <span>Mouse over me</span>
+                <div class="dropdown-content">
+                <a href="@Url.ActionLink("Catalog","Home", new {name = "", feature = 1})">Low To High</a>
+                <a href="@Url.ActionLink("Catalog","Home", new {name = "", feature = 2})">High To Low</a>
+                </div>
+        </div>
+        <a href="@Url.ActionLink("Catalog","Home", new {name = "", category = 1})">Skate</a>
+        <a href="@Url.ActionLink("Catalog","Home", new {name = "", category = 2})">Wheels</a>
     </div>
     <div class="catalog-container">
         <div class="filter"></div>
@@ -49,19 +79,3 @@
     <!-- blogs section ends -->
        
 </main>
-@*<script>
-    window.onload = function {
-        var sorter = document.getElementById('sort');
-        var value = sorter.options[sorter.selecterIndex].value;
-        if(value=="Featured")
-            @FilteredList = @Model;
-        else if (value == "Low") {
-            for (let product in @Model) { 
-                
-            }
-        }
-            
-    }
-</script>*@
-
-

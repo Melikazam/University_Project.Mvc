@@ -32,12 +32,13 @@ namespace University_Project.Mvc.Controllers
 
         //[Authorize(Roles = "Member")]
         [Route("Catalog")]
-        public IActionResult Catalog(string name, int? feature)
+        public IActionResult Catalog(string name, int? feature, int? category)
         {
-            if (String.IsNullOrEmpty(name) && !feature.HasValue) { return View(_service.GetProducts()); }
-
-
-
+            if (String.IsNullOrEmpty(name) && !feature.HasValue && !category.HasValue) { return View(_service.GetProducts()); }
+            else if (feature.HasValue && feature.Value == 1) { return View(_service.GetProducts().OrderBy(x => x.Price).ToList()); }
+            else if (feature.HasValue && feature.Value == 2) { return View(_service.GetProducts().OrderByDescending(x => x.Price).ToList()); }
+            else if (category.HasValue && category.Value == 1) { return View(_service.GetProducts().Where(x => x.Category_Id == category.Value).ToList()); }
+            else if (category.HasValue && category.Value == 2) { return View(_service.GetProducts().Where(x => x.Category_Id == category.Value).ToList()); }
             var lst = _service.GetProducts().Where(p => p.Name.ToLower().StartsWith(name.ToLower())).ToList();
             return View(lst);
         }

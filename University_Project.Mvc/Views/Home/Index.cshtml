@@ -1,4 +1,6 @@
-﻿@{
+﻿@model List<Product>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 <section class="home" id="home">
@@ -17,51 +19,19 @@
 
     <section class="catalog" id="catalog">
         <div class="box-container">
-            
-            <div class="box">
-                <img src="../images/skate4.png" alt="">
-                <div class="content">
-                    <div class="icons">
-                        <h3>Skate</h3>
-                    </div>
-                    <p style="font-size: 20px;padding-left: 10px;">199.99$</p>
-                    <a href="#" class="btn">read more</a>
-                </div>
-            </div>
-            <div class="box">
-                <img src="~/images/skate.png" alt="">
-                <div class="content">
-                    <div class="icons">
-                        <h3>Skate</h3>
-                    </div>
-                    <p style="font-size: 20px;padding-left: 10px;">199.99$</p>
-                    <a href="#" class="btn">read more</a>
-                </div>
-            </div>
-    
-            <div class="box">
-                <img src="../images/skate2.png" alt="">
-                <div class="content">
-                    <div class="icons">
-                        <h3>Skate</h3>
-                    </div>
-                    <p style="font-size: 20px;padding-left: 10px;">199.99$</p>
-                    <a href="#" class="btn">read more</a>
-                </div>
-            </div>
-    
-            <div class="box">
-                <img src="../images/skate3.png" alt="">
-                <div class="content">
-                    <div class="icons">
-                        <h3>Skate</h3>
-                    </div>
+            foreach(var obj in Model){
+                <div class="box">
+                    <img src="~/images/skate.png" alt="">
+                    <div class="content">
+                        <div class="icons">
+                            <h3>Skate</h3>
+                        </div>
                         <p style="font-size: 20px;padding-left: 10px;">199.99$</p>
                         <a href="#" class="btn">read more</a>
+                    </div>
                 </div>
-            </div>
-    
-        </div>
+            }
+           
     
     </section>
     

@@ -21,10 +21,10 @@ namespace University_Project.Mvc.Controllers
         }
 
         [HttpPost("Create")]
-        public ActionResult CreateContact(Contact contact)
+        public ActionResult CreateContact([FromForm] Contact contact)
         {
             _contactService.CreateContact(contact);
-            return Ok("Contact created");
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet("Get")]
