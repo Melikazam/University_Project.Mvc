@@ -20,17 +20,17 @@
         <div class="right-column">
             <div class="product-header">
                 <header>
-                    <h1>Product</h1> 
-                    <h4>Category</h4>
+                    <h1>@Model.Name</h1> 
+                    <h4>@Model.Category_Id</h4>
                     <h3 class="space" style="height: 45px;"></h3>
                 </header>
                     <p class="product-description">
-                        Product description looks like this
+                        @Model.Description
                     </p>
             </div>
             <div class="product-footer">
                 <footer>
-                    <p>17.99$</p>
+                    <p>@Model.Price</p>
                     <a href="#" class="btn"> Add To Cart</a>
                 </footer>
             </div>

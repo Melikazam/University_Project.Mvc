@@ -72,7 +72,7 @@ namespace University_Project.Mvc
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=index}/{id?}");
+                    pattern: "{controller=Home}/{action=Catalog}/{id?}");
                 endpoints.MapRazorPages();
             });
         }

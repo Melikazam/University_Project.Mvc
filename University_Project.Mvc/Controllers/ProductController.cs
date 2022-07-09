@@ -14,9 +14,9 @@ namespace University_Project.Mvc.Controllers
         {
             _productService = productService;
         }
-        public ActionResult Index() 
+        public ActionResult Index(Product product) 
         {
-            return View();
+            return View(product);
         }
 
         [HttpGet("Get")]

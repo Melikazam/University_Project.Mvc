@@ -9,7 +9,7 @@ namespace University_Project.Mvc.Repository
         void DeleteArticleById(int id);
         Article GetArticleById(int id);
         List<Article>GetArticles();
-        void UpdateArticle();
+        void UpdateArticleById(Article article, int id);
 
     }
 }
