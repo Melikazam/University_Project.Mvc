@@ -1,6 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using University_Project.Mvc.Models;
 
 namespace University_Project.Mvc.Services

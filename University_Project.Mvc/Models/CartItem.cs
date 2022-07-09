@@ -7,8 +7,6 @@ namespace University_Project.Mvc.Models
         [Key] 
         public int Id { get; set; }
 
-        public string ItemId { get; set; }
-
         public int Quantity { get; set; }
 
         public int ProductId { get; set; }

@@ -13,19 +13,19 @@ namespace University_Project.Mvc.Repository
             _context = context;
         }
 
-        public void AddArticle(Article article)
+        public void CreateArticle(Article article)
         {
             _context.Articles.Add(article);
             _context.SaveChanges();
         }
 
-        public void DeleteArticle(Article article)
+        public void DeleteArticleById(int id)
         {
-            _context.Articles.Remove(article);
+            _context.Articles.Remove(_context.Articles.FirstOrDefault(u => u.Id == id));
             _context.SaveChanges();
         }
 
-        public Article GetArticle(int id)
+        public Article GetArticleById(int id)
         {
             return _context.Articles.FirstOrDefault(u => u.Id == id);
         }
@@ -35,7 +35,7 @@ namespace University_Project.Mvc.Repository
             return _context.Articles.ToList();
         }
 
-        public void UpdateArticle(Article article, int id)
+        public void UpdateArticleById(Article article, int id)
         {
             Article temp = _context.Articles.FirstOrDefault(u => u.Id == id);
             if (temp != null)
