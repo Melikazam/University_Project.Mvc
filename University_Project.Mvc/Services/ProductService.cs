@@ -24,6 +24,7 @@ namespace University_Project.Mvc.Services
             return _productRepository.GetProduct(id);
         }
 
+
         public void CreateProduct(Product product)
         {
             _productRepository.AddProduct(product);

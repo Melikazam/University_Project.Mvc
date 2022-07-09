@@ -37,12 +37,11 @@
         <div class="fas fa-shopping-cart" id="cart-btn"></div>
         <div class="fas fa-user" id="login-btn"></div>
     </div>
-
-    <form action="" class="search-form">
-        <input type="search" id="search-box" placeholder="search here...">
+    @using (Html.BeginForm("Catalog", "Home", FormMethod.Post , new {@class="search-form"})){
+  
+        <input name="name" type="search" id="search-box" placeholder="search here...">
         <label for="search-box" class="fas fa-search"></label>
-    </form>
-
+    }
     <div class="shopping-cart">
         <div class="box">
             <i class="fas fa-trash"></i>

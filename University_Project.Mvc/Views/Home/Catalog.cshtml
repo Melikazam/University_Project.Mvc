@@ -24,7 +24,12 @@
                 <div class="box-container">
                     @foreach(var product in @Model){
                             <div class="box">
-                                <img src="~/images/blog-1.jpg">
+                            @{
+                                var base64 = Convert.ToBase64String(product.Image);
+                                var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                            }
+
+                            <img src="@imgSrc" />
                                 <div class="content">
                                     <div class="icons">
                                         <h3>@product.Name</h3>

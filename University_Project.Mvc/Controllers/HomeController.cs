@@ -22,37 +22,39 @@ namespace University_Project.Mvc.Controllers
             _logger = logger;
         }
 
-        [Authorize()]
-        [Authorize(Roles = "Member")]
-        [Route("Index")]
+
         public IActionResult Index()
         {
+            if(User.IsInRole("Admin"))
+                return RedirectToAction("ProductsList");
             return View();
         }
 
         //[Authorize(Roles = "Member")]
         [Route("Catalog")]
-        public IActionResult Catalog()
+        public IActionResult Catalog(string name, int? feature)
         {
-            return View(_service.GetProducts());
+            if (String.IsNullOrEmpty(name) && !feature.HasValue) { return View(_service.GetProducts()); }
+
+
+
+            var lst = _service.GetProducts().Where(p => p.Name.ToLower().StartsWith(name.ToLower())).ToList();
+            return View(lst);
         }
 
-        //[Authorize(Roles = "Member")]
-        [Route("ContactUs")]
+        [Authorize(Roles = "Member")]
         public IActionResult ContactUs()
         {
             return View();
         }
 
         //[Authorize(Roles = "Member")]
-        [Route("AboutUs")]
         public IActionResult AboutUs()
         {
             return View();
         }
 
-        //[Authorize(Roles = "Admin")]
-        [Route("ProductsList")]
+        [Authorize(Roles = "Admin")]
         public IActionResult ProductsList()
         {
             return View(_service.GetProducts());

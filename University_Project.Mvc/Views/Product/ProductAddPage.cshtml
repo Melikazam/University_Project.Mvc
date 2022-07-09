@@ -1,30 +1,34 @@
-﻿@{
+﻿@model University_Project.Mvc.Models.ProductFormViewModel
+
+@{
     ViewData["Title"] = "Product Page";
 }
 
 <h1 class="top-space" style="height: 80px;"></h1>
 
+@using (Html.BeginForm( "CreateProduct", "Product", FormMethod.Post, new { enctype="multipart/form-data"})){
 <main>
     <div class="product-add-container">
         <div>
             <h1>Create Product</h1>
-                <br>
-                <form id="product" method="">
+                <br />
                     <label>Name</label>
-                    <input type="text" placeholder="">
+                    @Html.TextBoxFor(i => i.Name , new {@placeholder=""})
                     <label>Price</label>
-                    <input type="text" placeholder="">
+                    @Html.TextBoxFor(i => i.price , new {@placeholder=""})
                     <label>description</label>
-                    <textarea class="description" placeholder="Enter your text"></textarea>
+                    @Html.TextAreaFor(i => i.Description, new {@placeholder="Write Text"})
                     
-                    <input type="file" id="img" name="img" style="border-style: none;border-radius: 0;">
-                    <select id="Categories" style="margin: 7px" class="price_sorting">
-                        <option class="type" value="Featured">Featured</option>
-                        <option value="Low">Low To High</option>
-                        <option value="High">High To Low</option>
+                    @*<input type="file" id="img" name="Image" style="border-style: none;border-radius: 0;">*@
+                    @*@Html.TextBoxFor(i => i.Image , new {@type="file", @style="border-style: none;border-radius: 0;"})*@
+                    <input asp-for="Image" class="form-control" />
+
+                    <select id="Categories" style="margin: 7px" class="price_sorting" name="Category_Id">
+                        <option class="type" value=1>Skate</option>
+                        <option value=2>Wheel</option>
                     </select>
-                    <input type="submit" value="Add Product" class="btn">
-                </form>
+                    <button type="submit"  class="btn">Add Product</button>
+                
         </div>
         <!-- <form action="" class="login-form">
             <h1 style="border-bottom: var(--border); margin-bottom: 20px;">Create Product</h1>
@@ -36,3 +40,4 @@
         </form> -->
     </div>
 </main>
+}
