@@ -9,11 +9,14 @@
 
 <style>
     .dropdown {
+        width: 100px;
       position: relative;
       display: inline-block;
     }
 
     .dropdown-content {
+      margin-left: 5px;
+      font-size: 15px;
       display: none;
       position: absolute;
       background-color: #f9f9f9;
@@ -27,6 +30,11 @@
       display: block;
     }
     .dropdown span{
+        margin: 15px;
+        font-size: 15px;
+        border-style: solid;
+        border-width: 2px;
+        background-color: whitesmoke;
         cursor: pointer;
     }
 </style>
@@ -38,14 +46,15 @@
     <div class="fixed-filter">
         <h1>Filter</h1>
         <div class="dropdown">
-                <span>Mouse over me</span>
-                <div class="dropdown-content">
-                <a href="@Url.ActionLink("Catalog","Home", new {name = "", feature = 1})">Low To High</a>
+            <a href="@Url.ActionLink("Catalog","Home", new {name = "", category = 1})" style="background-color: white; font-size: 20px;margin: 15px;">Board</a><br/>
+            <a href="@Url.ActionLink("Catalog","Home", new {name = "", category = 2})" style="background-color: white; font-size: 20px;margin: 15px;">Wheels</a><br/>
+            <span>Featured</span>
+            <div class="dropdown-content">
+                <a href="@Url.ActionLink("Catalog","Home", new {name = "", feature = 1})">Low To High</a> <br/>
                 <a href="@Url.ActionLink("Catalog","Home", new {name = "", feature = 2})">High To Low</a>
-                </div>
+            </div>
         </div>
-        <a href="@Url.ActionLink("Catalog","Home", new {name = "", category = 1})">Skate</a>
-        <a href="@Url.ActionLink("Catalog","Home", new {name = "", category = 2})">Wheels</a>
+        <br/>
     </div>
     <div class="catalog-container">
         <div class="filter"></div>

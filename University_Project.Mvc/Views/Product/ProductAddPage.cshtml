@@ -17,15 +17,15 @@
                     <label>Price</label>
                     @Html.TextBoxFor(i => i.price , new {@placeholder=""})
                     <label>description</label>
-                    @Html.TextAreaFor(i => i.Description, new {@placeholder="Write Text"})
+                    @Html.TextAreaFor(i => i.Description, new {@placeholder="Write Text", @class="description"})
                     
                     @*<input type="file" id="img" name="Image" style="border-style: none;border-radius: 0;">*@
                     @*@Html.TextBoxFor(i => i.Image , new {@type="file", @style="border-style: none;border-radius: 0;"})*@
-                    <input asp-for="Image" class="form-control" />
+                    <input asp-for="Image" class="form-control" style="border-style: none;border-radius: 0;" />
 
                     <select id="Categories" style="margin: 7px" class="price_sorting" name="Category_Id">
-                        <option class="type" value=1>Skate</option>
-                        <option value=2>Wheel</option>
+                        <option class="type" value=1>Board</option>
+                        <option value=2>Wheels</option>
                     </select>
                     <button type="submit"  class="btn">Add Product</button>
                 

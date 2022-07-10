@@ -4,11 +4,8 @@ namespace University_Project.Mvc.Models
 {
     public class CartItem
     {
-        [Key] 
+        [Key]
         public int Id { get; set; }
-
-        public int Quantity { get; set; }
-
         public int ProductId { get; set; }
     }
 }

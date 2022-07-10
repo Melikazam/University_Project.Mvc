@@ -26,7 +26,7 @@
             <div class="product-header">
                 <header>
                     <h1>@Model.Name</h1> 
-                    <h4>@Model.Category_Id</h4>
+                    <h4>@Model.Category_Id.ToString()</h4>
                     <h3 class="space" style="height: 45px;"></h3>
                 </header>
                     <p class="product-description">
@@ -36,7 +36,8 @@
             <div class="product-footer">
                 <footer>
                     <p>@Model.Price$</p>
-                    <a asp-controller="CartItem" asp-action="CreateCartItem" class="btn"> Add To Cart</a>
+                    <a asp-area="" asp-controller="Home" asp-action="Index"> Add To Cart</a>
+                  @*<a asp-controller="CartItem" asp-action="CreateCartItem" class="btn"> Add To Cart</a>*@
                 </footer>
             </div>
         </div>

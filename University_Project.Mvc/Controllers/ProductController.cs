@@ -17,10 +17,11 @@ namespace University_Project.Mvc.Controllers
             _productService = productService;
         }
 
-        [Authorize(Roles = "Member")]
         [Route("productPage")]
         public ActionResult Index(int id) 
         {
+            if (User.IsInRole("Admin"))
+                return RedirectToAction("ProductsList");
             var product = _productService.GetProductById(id);
             return View(product);
         }

@@ -1,22 +1,11 @@
 ﻿@model List<Product>
 
 @{
-    ViewData["Title"] = "Home Page";
-}
-<section class="home" id="home">
-    <video src="~/videos/vid.mp4" class="vid-bg" autoplay loop muted></video>
 
-    <div class="content">
-        <h3>i <span>love</span> skateboarding</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam libero nostrum veniam facere tempore nisi.</p>
-        <a asp-area="" asp-controller="Home" class="btn" asp-action="Catalog">shop now</a>
-    </div>
-    
-</section>
+}
+
 
 <main>
-    <h1 class="heading"> Our <span>Products</span> </h1>
-
     <section class="catalog" id="catalog">
         <div class="box-container">
             @foreach(var obj in Model){
@@ -32,13 +21,11 @@
                         </div>
                         <div class="inline">
                             <p style="font-size: 20px;padding-left: 10px;">@obj.Price $</p>
-                            <a asp-area="" asp-controller="Product" asp-action="Index" asp-route-id="@obj.Id" class="btn">read more</a>
                         </div>
                     </div>
                 </div>
             }
         </div>  
-    
     </section>
-    
+    <p>-----------------------------------------</p>
 </main>
