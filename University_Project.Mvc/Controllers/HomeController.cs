@@ -27,7 +27,9 @@ namespace University_Project.Mvc.Controllers
         {
             if(User.IsInRole("Admin"))
                 return RedirectToAction("ProductsList");
-            return View();
+            
+            var Products = _service.GetProducts().OrderBy(x => Guid.NewGuid()).Take(4).ToList();
+            return View(Products);
         }
 
         //[Authorize(Roles = "Member")]
